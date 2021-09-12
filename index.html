@@ -11,7 +11,7 @@
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
     <!-- My CSS -->
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style.css" />
 
     <!-- Bootstrap Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -71,10 +71,12 @@
             </div>
             <div class="row justify-content-center fs-5 text-center">
                 <div class="col-md-4">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam est omnis possimus aliquid repellat laborum qui velit voluptates ad rerum.</p>   
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam est omnis possimus aliquid repellat
+                        laborum qui velit voluptates ad rerum.</p>
                 </div>
                 <div class="col-md-4">
-                    <p fs-5>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima ipsa commodi nostrum illo, aliquam accusamus magnam, molestias perferendis veniam, ut enim? Aperiam eum totam ipsam?</p>
+                    <p fs-5>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima ipsa commodi nostrum illo,
+                        aliquam accusamus magnam, molestias perferendis veniam, ut enim? Aperiam eum totam ipsam?</p>
                 </div>
             </div>
         </div>
@@ -160,23 +162,30 @@
             </div>
             <div class="row justify-content-lg-center">
                 <div class="col-md-6">
-                    <form>
+                    <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+                        <strong>Terima Kasih!</strong> Pesan Anda telah kami Terima "-"
+                        <button type="button" class="btn-close " data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <form name="portofolio-contact-form">
                         <div class="mb-3">
                             <label for="name" class="form-label">Nama Lengkap</label>
                             <input type="text" class="form-control" id="name
-                                aria-describedby="name">
+                                aria-describedby=" name="nama">
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email"
-                                aria-describedby="email">
+                            <input type="email" class="form-control" id="email" aria-describedby="email" name="email">
                         </div>
                         <div class="mb-3">
                             <label for="pesan" class="form-label">Pesan</label>
-                            <textarea class="form-control" id="pesan" rows="3"></textarea>
+                            <textarea class="form-control" id="pesan" rows="3" name="pesan"></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-danger">Kirim</button>
+                        <button type="submit" class="btn btn-info btn-kirim">Kirim</button>
+                        <button class="btn btn-info btn-loading d-none" type="button" disabled>
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Loading...
+                        </button>
                     </form>
                 </div>
             </div>
@@ -204,6 +213,37 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+    <script>
+        const scriptURL ='https://script.google.com/macros/s/AKfycbx9JDDON9KBzz0dTuUHnPJZGZpkLuM6C7JXn5UoaWwryV7RVeftmd5iPvluX1XDI49bFA/exec';
+        const form = document.forms['portofolio-contact-form']
+        const btnKirim = document.querySelector('.btn-kirim');
+        const btnLoading = document.querySelector('.btn-loading');
+        const myAlert = document.querySelector('.my-alert');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            // Ketika tombol submit di click
+            // Tampilkan tombol loading, hilangkan tombol kirim
+            btnLoading.classList.toggle('d-none');
+            btnKirim.classList.toggle('d-none')
+            fetch(scriptURL, {
+                    method: 'POST',
+                    body: new FormData(form)
+                })
+                .then(response => {
+
+                    // Tampilkan tombol kirim, hilangkan tombol loading
+                    btnLoading.classList.toggle('d-none');
+                    btnKirim.classList.toggle('d-none')
+                    // Tampilkan Alert
+                    myAlert.classList.toggle('d-none')
+                    // reset form
+                    form.reset();
+                    console.log('Success!', response)
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
     </script>
 
 </body>
