@@ -16,6 +16,10 @@
     <!-- Bootstrap Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
+    <!-- AOS - Animate on Scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
     <title>My Portofolio | Eka Setiyanto</title>
 </head>
 
@@ -52,7 +56,7 @@
     <section class="jumbotron text-center">
         <img src="img/pp.jpg" alt="Eka" width="150" class="rounded-circle img-thumbnail">
         <h1 class="display-4">Eka Setiyanto</h1>
-        <p class="lead">Student | Programmer</p>
+        <p class="lead"></p>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <path fill="#ffffff" fill-opacity="1"
                 d="M0,32L40,26.7C80,21,160,11,240,42.7C320,75,400,149,480,165.3C560,181,640,139,720,101.3C800,64,880,32,960,42.7C1040,53,1120,107,1200,144C1280,181,1360,203,1400,213.3L1440,224L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
@@ -65,18 +69,19 @@
     <section id="about">
         <div class="container">
             <div class="row text-center mb-3">
-                <div class="col">
+                <div class="col" data-aos="fade-down" data-aos-duration="1000">
                     <h2>About Me</h2>
                 </div>
             </div>
             <div class="row justify-content-center fs-5 text-center">
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-right" data-aos-duration="1000">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam est omnis possimus aliquid repellat
                         laborum qui velit voluptates ad rerum.</p>
                 </div>
-                <div class="col-md-4">
-                    <p fs-5>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima ipsa commodi nostrum illo,
-                        aliquam accusamus magnam, molestias perferendis veniam, ut enim? Aperiam eum totam ipsam?</p>
+                <div class="col-md-4" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam est omnis possimus aliquid
+                        repellat
+                        laborum qui velit voluptates ad rerum.</p>
                 </div>
             </div>
         </div>
@@ -91,14 +96,14 @@
     <!-- Card Section -->
     <section id="projects">
         <div class="container">
-            <div class="row text-center mb-3">
-                <div class="col">
+            <div class="row text-center mb-4">
+                <div class="col" data-aos="fade-down" data-aos-duration="2000">
                     <h2>My Projects</h2>
                 </div>
             </div>
             <div class="row justify-content-lg-center">
                 <div class="col-md-4 mb-3">
-                    <div class="card">
+                    <div class="card" data-aos="zoom-in-up" data-aos-duration="2000">
                         <img src="img/projects/1.jpg" class="card-img-top" alt="project1">
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk
@@ -107,7 +112,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 mb-3">
-                    <div class="card">
+                    <div class="card" data-aos="zoom-in-up" data-aos-duration="2000" data-aos-delay="200">
                         <img src="img/projects/2.jpg" class="card-img-top" alt="project2">
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk
@@ -116,7 +121,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 mb-3">
-                    <div class="card">
+                    <div class="card" data-aos="zoom-in-up" data-aos-duration="2000" data-aos-delay="300">
                         <img src="img/projects/3.jpg" class="card-img-top" alt="project3">
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk
@@ -125,7 +130,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 mb-3">
-                    <div class="card">
+                    <div class="card" data-aos="zoom-in-up" data-aos-duration="2000" data-aos-delay="400">
                         <img src="img/projects/4.jpg" class="card-img-top" alt="project4">
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk
@@ -134,7 +139,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 mb-3">
-                    <div class="card">
+                    <div class="card" data-aos="zoom-in-up" data-aos-duration="2000" data-aos-delay="500">
                         <img src="img/projects/5.jpg" class="card-img-top" alt="project5">
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk
@@ -156,7 +161,7 @@
     <section id="contact">
         <div class="container">
             <div class="row text-center mb-3">
-                <div class="col">
+                <div class="col" data-aos="fade-down" data-aos-duration="2000">
                     <h2>Contact Me</h2>
                 </div>
             </div>
@@ -167,21 +172,21 @@
                         <button type="button" class="btn-close " data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     <form name="portofolio-contact-form">
-                        <div class="mb-3">
+                        <div class="mb-3" data-aos="fade-right" data-aos-duration="1000">
                             <label for="name" class="form-label">Nama Lengkap</label>
                             <input type="text" class="form-control" id="name
                                 aria-describedby=" name="nama">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
                             <label for="email" class="form-label">Email</label>
                             <input type="email" class="form-control" id="email" aria-describedby="email" name="email">
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
                             <label for="pesan" class="form-label">Pesan</label>
                             <textarea class="form-control" id="pesan" rows="3" name="pesan"></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-info btn-kirim">Kirim</button>
+                        <button type="submit" class="btn btn-info btn-kirim" data-aos="fade-up"data-aos-duration="1000" data-aos-delay="500">Kirim</button>
                         <button class="btn btn-info btn-loading d-none" type="button" disabled>
                             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                             Loading...
@@ -214,8 +219,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        const scriptURL ='https://script.google.com/macros/s/AKfycbx9JDDON9KBzz0dTuUHnPJZGZpkLuM6C7JXn5UoaWwryV7RVeftmd5iPvluX1XDI49bFA/exec';
+        AOS.init({
+            once: true, // whether animation should happen only once - while scrolling down
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/TextPlugin.min.js"></script>
+    <script>
+        gsap.from('.jumbotron img', {duration: 2, y:-300, opacity: 0, ease:'bounce'});
+        gsap.from('.display-4', {duration: 1.5, delay: 1, x:-300, opacity: 0})
+        gsap.to('.lead', {duration: 1.5, delay: 2, text:"Student | Programmer"})
+    </script>
+
+    <script>
+        const scriptURL =
+            'https://script.google.com/macros/s/AKfycbx9JDDON9KBzz0dTuUHnPJZGZpkLuM6C7JXn5UoaWwryV7RVeftmd5iPvluX1XDI49bFA/exec';
         const form = document.forms['portofolio-contact-form']
         const btnKirim = document.querySelector('.btn-kirim');
         const btnLoading = document.querySelector('.btn-loading');
